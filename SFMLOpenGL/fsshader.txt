@@ -3,5 +3,5 @@ in vec4 color;
 in vec2 texel;
 out vec4 fColor;
 void main() {
-fColor = texture(f_texture, texel.st);
+fColor = color + texture(f_texture, texel.st);
 }
