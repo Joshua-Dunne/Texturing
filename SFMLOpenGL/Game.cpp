@@ -51,19 +51,22 @@ GLubyte triangles[36]
 	// front
 		0, 1, 2,
 		2, 3, 0,
-	// back
+	// top
 		4, 5, 6,
 		7, 6, 5,
-	// top
+	// back
 		8, 9, 10,
 		10, 11, 8,
+
 	// bottom
 		14, 13, 12,
 		12, 15, 14,
 
+	// right
 		16, 17, 18,
 		18, 19, 16,
 
+	// left
 		20, 21, 22,
 		22, 23, 20
 };
@@ -320,31 +323,33 @@ void Game::initialize()
 	vertex[3].texel[0] = 0.5f;
 	vertex[3].texel[1] = 0.25f;
 
-	// back
-	vertex[4].texel[0] = 1.0f;
-	vertex[4].texel[1] = 0.5f;
-
-	vertex[5].texel[0] = 0.75f;
-	vertex[5].texel[1] = 0.5f;
-
-	vertex[6].texel[0] = 0.75f;
-	vertex[6].texel[1] = 0.25f;
-
-	vertex[7].texel[0] = 1.0f;
-	vertex[7].texel[1] = 0.25f;
-
 	// top
-	vertex[8].texel[0] = 0.5f;
-	vertex[8].texel[1] = 0.25f;
 
-	vertex[9].texel[0] = 0.25f;
-	vertex[9].texel[1] = 0.25f;
+	vertex[4].texel[0] = 0.25f;
+	vertex[4].texel[1] = 0.25f;
 
-	vertex[10].texel[0] = 0.25f;
-	vertex[10].texel[1] = 0.0f;
+	vertex[5].texel[0] = 0.5f;
+	vertex[5].texel[1] = 0.25f;
 
-	vertex[11].texel[0] = 0.5f;
-	vertex[11].texel[1] = 0.0f;
+	vertex[6].texel[0] = 0.5f;
+	vertex[6].texel[1] = 0.0f;
+
+	vertex[7].texel[0] = 0.25f;
+	vertex[7].texel[1] = 0.0f;
+
+	// back
+	vertex[8].texel[0] = 1.0f;
+	vertex[8].texel[1] = 0.5f;
+
+	vertex[9].texel[0] = 0.75f;
+	vertex[9].texel[1] = 0.5f;
+
+	vertex[10].texel[0] = 0.75f;
+	vertex[10].texel[1] = 0.25f;
+
+	vertex[11].texel[0] = 1.0f;
+	vertex[11].texel[1] = 0.25f;
+
 
 	// bottom
 	vertex[12].texel[0] = 0.5f;
@@ -360,29 +365,31 @@ void Game::initialize()
 	vertex[15].texel[1] = 0.5f;
 
 	// left
-	vertex[16].texel[0] = 0.25f;
+
+	vertex[16].texel[0] = 0.75f;
 	vertex[16].texel[1] = 0.5f;
 
-	vertex[17].texel[0] = 0.0f;
+	vertex[17].texel[0] = 0.5f;
 	vertex[17].texel[1] = 0.5f;
 
-	vertex[18].texel[0] = 0.0f;
+	vertex[18].texel[0] = 0.5f;
 	vertex[18].texel[1] = 0.25f;
 
-	vertex[19].texel[0] = 0.25f;
+	vertex[19].texel[0] = 0.75f;
 	vertex[19].texel[1] = 0.25f;
 
 	// right
-	vertex[20].texel[0] = 0.75f;
+	
+	vertex[20].texel[0] = 0.25f;
 	vertex[20].texel[1] = 0.5f;
 
-	vertex[21].texel[0] = 0.5f;
+	vertex[21].texel[0] = 0.0f;
 	vertex[21].texel[1] = 0.5f;
 
-	vertex[22].texel[0] = 0.5f;
+	vertex[22].texel[0] = 0.0f;
 	vertex[22].texel[1] = 0.25f;
 
-	vertex[23].texel[0] = 0.75f;
+	vertex[23].texel[0] = 0.25f;
 	vertex[23].texel[1] = 0.25f;
 
 	/* Create a new VBO using VBO id */
