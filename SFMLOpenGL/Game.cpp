@@ -52,8 +52,8 @@ GLubyte triangles[36]
 		0, 1, 2,
 		2, 3, 0,
 	// top
-		4, 5, 6,
-		7, 6, 5,
+		6, 5, 4,
+		4, 7, 6,
 	// back
 		8, 9, 10,
 		10, 11, 8,
@@ -125,21 +125,27 @@ void Game::initialize()
 	vertex[3].coordinate[1] = 1.0f;
 	vertex[3].coordinate[2] = 1.0f;
 
+	// top
 	vertex[4].coordinate[0] = 1.0f;
 	vertex[4].coordinate[1] = 1.0f;
 	vertex[4].coordinate[2] = 1.0f;
 
-	vertex[5].coordinate[0] = 1.0f;
+	vertex[5].coordinate[0] = -1.0f;
 	vertex[5].coordinate[1] = 1.0f;
-	vertex[5].coordinate[2] = -1.0f;
+	vertex[5].coordinate[2] = 1.0f;
+
 
 	vertex[6].coordinate[0] = -1.0f;
 	vertex[6].coordinate[1] = 1.0f;
-	vertex[6].coordinate[2] = 1.0f;
+	vertex[6].coordinate[2] = -1.0f;
 
-	vertex[7].coordinate[0] = -1.0f;
+	vertex[7].coordinate[0] = 1.0f;
 	vertex[7].coordinate[1] = 1.0f;
 	vertex[7].coordinate[2] = -1.0f;
+
+	
+
+	//
 
 	vertex[8].coordinate[0] = -1.0f;
 	vertex[8].coordinate[1] = 1.0f;
@@ -326,16 +332,16 @@ void Game::initialize()
 	// top
 
 	vertex[4].texel[0] = 0.25f;
-	vertex[4].texel[1] = 0.25f;
+	vertex[4].texel[1] = 0.0f;
 
 	vertex[5].texel[0] = 0.5f;
-	vertex[5].texel[1] = 0.25f;
+	vertex[5].texel[1] = 0.0f;
 
 	vertex[6].texel[0] = 0.5f;
-	vertex[6].texel[1] = 0.0f;
+	vertex[6].texel[1] = 0.25f;
 
 	vertex[7].texel[0] = 0.25f;
-	vertex[7].texel[1] = 0.0f;
+	vertex[7].texel[1] = 0.25f;
 
 	// back
 	vertex[8].texel[0] = 1.0f;
