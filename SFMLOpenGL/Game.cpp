@@ -49,23 +49,23 @@ Vertex vertex[VERTEX_NUM];
 GLubyte triangles[36]
 {
 	// front
-		2, 3, 0,
 		0, 1, 2,
+		2, 3, 0,
 	// back
+		4, 5, 6,
 		7, 6, 5,
-		5, 4, 7,
 	// top
-		6, 7, 3,
-		3, 2, 6,
+		8, 9, 10,
+		10, 11, 8,
 	// bottom
-		1, 0, 4,
-		4, 5, 1,
+		14, 13, 12,
+		12, 15, 14,
 
-		3, 7, 4,
-		4, 0, 3,
+		16, 17, 18,
+		18, 19, 16,
 
-		6, 2, 1,
-		1, 5, 6
+		20, 21, 22,
+		22, 23, 20
 };
 
 /* Variable to hold the VBO identifier and shader data */
@@ -122,67 +122,67 @@ void Game::initialize()
 	vertex[3].coordinate[1] = 1.0f;
 	vertex[3].coordinate[2] = 1.0f;
 
-	vertex[4].coordinate[0] = -1.0f;
-	vertex[4].coordinate[1] = -1.0f;
-	vertex[4].coordinate[2] = -1.0f;
+	vertex[4].coordinate[0] = 1.0f;
+	vertex[4].coordinate[1] = 1.0f;
+	vertex[4].coordinate[2] = 1.0f;
 
 	vertex[5].coordinate[0] = 1.0f;
-	vertex[5].coordinate[1] = -1.0f;
+	vertex[5].coordinate[1] = 1.0f;
 	vertex[5].coordinate[2] = -1.0f;
 
-	vertex[6].coordinate[0] = 1.0f;
+	vertex[6].coordinate[0] = -1.0f;
 	vertex[6].coordinate[1] = 1.0f;
-	vertex[6].coordinate[2] = -1.0f;
+	vertex[6].coordinate[2] = 1.0f;
 
 	vertex[7].coordinate[0] = -1.0f;
 	vertex[7].coordinate[1] = 1.0f;
 	vertex[7].coordinate[2] = -1.0f;
 
 	vertex[8].coordinate[0] = -1.0f;
-	vertex[8].coordinate[1] = -1.0f;
-	vertex[8].coordinate[2] = 1.0f;
+	vertex[8].coordinate[1] = 1.0f;
+	vertex[8].coordinate[2] = -1.0f;
 
 	vertex[9].coordinate[0] = 1.0f;
-	vertex[9].coordinate[1] = -1.0f;
-	vertex[9].coordinate[2] = 1.0f;
+	vertex[9].coordinate[1] = 1.0f;
+	vertex[9].coordinate[2] = -1.0f;
 
 	vertex[10].coordinate[0] = 1.0f;
-	vertex[10].coordinate[1] = 1.0f;
-	vertex[10].coordinate[2] = 1.0f;
+	vertex[10].coordinate[1] = -1.0f;
+	vertex[10].coordinate[2] = -1.0f;
 
 	vertex[11].coordinate[0] = -1.0f;
-	vertex[11].coordinate[1] = 1.0f;
-	vertex[11].coordinate[2] = 1.0f;
+	vertex[11].coordinate[1] = -1.0f;
+	vertex[11].coordinate[2] = -1.0f;
 
 	vertex[12].coordinate[0] = -1.0f;
 	vertex[12].coordinate[1] = -1.0f;
-	vertex[12].coordinate[2] = -1.0f;
+	vertex[12].coordinate[2] = 1.0f;
 
 	vertex[13].coordinate[0] = 1.0f;
 	vertex[13].coordinate[1] = -1.0f;
-	vertex[13].coordinate[2] = -1.0f;
+	vertex[13].coordinate[2] = 1.0f;
 
 	vertex[14].coordinate[0] = 1.0f;
-	vertex[14].coordinate[1] = 1.0f;
+	vertex[14].coordinate[1] = -1.0f;
 	vertex[14].coordinate[2] = -1.0f;
 
 	vertex[15].coordinate[0] = -1.0f;
-	vertex[15].coordinate[1] = 1.0f;
+	vertex[15].coordinate[1] = -1.0f;
 	vertex[15].coordinate[2] = -1.0f;
 
-	vertex[16].coordinate[0] = -1.0f;
+	vertex[16].coordinate[0] = 1.0f;
 	vertex[16].coordinate[1] = -1.0f;
 	vertex[16].coordinate[2] = 1.0f;
 
 	vertex[17].coordinate[0] = 1.0f;
 	vertex[17].coordinate[1] = -1.0f;
-	vertex[17].coordinate[2] = 1.0f;
+	vertex[17].coordinate[2] = -1.0f;
 
 	vertex[18].coordinate[0] = 1.0f;
 	vertex[18].coordinate[1] = 1.0f;
-	vertex[18].coordinate[2] = 1.0f;
+	vertex[18].coordinate[2] = -1.0f;
 
-	vertex[19].coordinate[0] = -1.0f;
+	vertex[19].coordinate[0] = 1.0f;
 	vertex[19].coordinate[1] = 1.0f;
 	vertex[19].coordinate[2] = 1.0f;
 
@@ -190,13 +190,13 @@ void Game::initialize()
 	vertex[20].coordinate[1] = -1.0f;
 	vertex[20].coordinate[2] = -1.0f;
 
-	vertex[21].coordinate[0] = 1.0f;
+	vertex[21].coordinate[0] = -1.0f;
 	vertex[21].coordinate[1] = -1.0f;
-	vertex[21].coordinate[2] = -1.0f;
+	vertex[21].coordinate[2] = 1.0f;
 
-	vertex[22].coordinate[0] = 1.0f;
+	vertex[22].coordinate[0] = -1.0f;
 	vertex[22].coordinate[1] = 1.0f;
-	vertex[22].coordinate[2] = -1.0f;
+	vertex[22].coordinate[2] = 1.0f;
 
 	vertex[23].coordinate[0] = -1.0f;
 	vertex[23].coordinate[1] = 1.0f;
@@ -236,6 +236,8 @@ void Game::initialize()
 	vertex[7].color[1] = 1.0f;
 	vertex[7].color[2] = 0.0f;
 
+	// top
+
 	vertex[8].color[0] = 0.0f;
 	vertex[8].color[1] = 1.0f;
 	vertex[8].color[2] = 0.0f;
@@ -252,6 +254,7 @@ void Game::initialize()
 	vertex[11].color[1] = 1.0f;
 	vertex[11].color[2] = 0.0f;
 
+	// bottom
 	vertex[12].color[0] = 0.0f;
 	vertex[12].color[1] = 1.0f;
 	vertex[12].color[2] = 0.0f;
@@ -268,6 +271,7 @@ void Game::initialize()
 	vertex[15].color[1] = 1.0f;
 	vertex[15].color[2] = 0.0f;
 
+	//left
 	vertex[16].color[0] = 0.0f;
 	vertex[16].color[1] = 1.0f;
 	vertex[16].color[2] = 0.0f;
@@ -284,6 +288,7 @@ void Game::initialize()
 	vertex[19].color[1] = 1.0f;
 	vertex[19].color[2] = 0.0f;
 
+	// right
 	vertex[20].color[0] = 0.0f;
 	vertex[20].color[1] = 1.0f;
 	vertex[20].color[2] = 0.0f;
